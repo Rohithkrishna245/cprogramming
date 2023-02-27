@@ -1,0 +1,13 @@
+#include <stdio.h>
+ 
+int main(){
+    int N, nFactorial, counter;
+    printf("Enter a number for factorial calculation \n");
+    scanf("%d",&N);
+    for(counter=1,nFactorial=1; counter <= N; counter++){
+        nFactorial = nFactorial * counter;
+    }
+    printf("Factorial of %d is %d", N, nFactorial);
+     
+    return 0;
+}
