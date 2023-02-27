@@ -1,0 +1,28 @@
+#include <stdio.h>
+ 
+typedef struct complex {
+   int real;
+   int imaginary;
+} complexNumber;
+  
+int main() {
+   complexNumber firstCN, secondCN, sumCN;
+  
+   printf("Enter value of A and B for (A + iB)\n");
+   scanf("%d %d", &firstCN.real, &firstCN.imaginary);
+    
+   printf("Enter value of C and D for (C + iD)\n");
+   scanf("%d %d", &secondCN.real, &secondCN.imaginary);
+    
+   /*(A + Bi)+(C + Di) = (A+C) + (B+D)i */
+   sumCN.real = firstCN.real + secondCN.real;
+   sumCN.imaginary = firstCN.imaginary + secondCN.imaginary;
+     
+  
+   if (sumCN.imaginary >= 0 )
+      printf("SUM = %d + %di\n", sumCN.real, sumCN.imaginary);
+   else
+      printf("SUM = %d %di\n", sumCN.real, sumCN.imaginary);
+    
+   return 0;
+}
