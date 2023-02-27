@@ -1,0 +1,53 @@
+#include <stdio.h>
+ 
+int main(){
+    int rows1, cols1, rows2, cols2, rowCounter, colCounter, i, j, k;
+    int firstMatrix[50][50], secondMatrix[50][50];
+    int productMatrix[50][50] = {0};
+     
+    printf("Enter Rows and Columns of first matrix\n");
+    scanf("%d %d", &rows1, &cols1);
+     
+    /* Input first matrix */
+    printf("Enter first Matrix of size %dX%d\n", rows1, cols1);
+    for(rowCounter = 0; rowCounter < rows1; rowCounter++){
+        for(colCounter = 0; colCounter < cols1; colCounter++){
+            scanf("%d", &firstMatrix[rowCounter][colCounter]);
+        }
+    }
+ 
+    /* Input second matrix */
+    printf("Enter Rows and Columns of second matrix\n");
+    scanf("%d %d", &rows2, &cols2);
+     
+    if(cols1 != rows2){
+        printf("Matrices cannot be multiplied\n");
+    } else {
+        printf("Enter second Matrix of size %dX%d\n", cols2, rows2);
+        for(rowCounter = 0; rowCounter < rows2; rowCounter++){
+            for(colCounter = 0; colCounter < cols2; colCounter++){
+                scanf("%d", &secondMatrix[rowCounter][colCounter]);
+            }
+        }
+ 
+        /* Multiply both matrices */
+        for(i = 0; i < rows1; i++){
+            for(j = 0; j < rows2; j++){
+                for(k = 0; k < cols2; k++){
+                 productMatrix[i][j] += firstMatrix[i][k]*secondMatrix[k][j];
+                } 
+            }
+        }
+ 
+        /* Print product matrix */
+        printf("Product Matrix\n");
+        for(rowCounter = 0; rowCounter < rows1; rowCounter++){
+            for(colCounter = 0; colCounter < cols2; colCounter++){
+                printf("%d ", productMatrix[rowCounter][colCounter]);
+            }
+            printf("\n");
+        }
+    }
+     
+    return 0;
+}
